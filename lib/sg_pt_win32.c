@@ -454,7 +454,7 @@ scsi_pt_open_flags(const char * device_name, int flags, int vb)
         pr2ws("%s: CreateFile('%s'), bus=%d, target=%d, lun=%d\n", __func__,
               shp->adapter, bus, target, lun);
 #if 1
-    shp->fh = CreateFile(shp->adapter, GENERIC_READ | GENERIC_WRITE,
+    shp->fh = CreateFile(device_name, GENERIC_READ | GENERIC_WRITE,     //just modifiy for win32
                          share_mode, NULL, OPEN_EXISTING, 0, NULL);
 #endif
 
