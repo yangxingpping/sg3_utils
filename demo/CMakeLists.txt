@@ -20,6 +20,6 @@ AUX_SOURCE_DIRECTORY(../get_opt_log get_opt_src)
 
 PROJECT(demo)
 
-target_link_libraries(demo sg3_utils)
-
 ADD_EXECUTABLE(demo  main.c ${get_opt_src})
+
+target_link_libraries(demo sg3_utils)
