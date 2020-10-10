@@ -40,7 +40,9 @@
 #define __STDC_FORMAT_MACROS 1
 #include <inttypes.h>
 #include <errno.h>
+#ifndef _WIN32
 #include <unistd.h>
+#endif
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>

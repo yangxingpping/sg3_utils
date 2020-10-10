@@ -13,7 +13,9 @@
 #include <stdint.h>
 #include <string.h>
 #include <errno.h>
+#ifndef _WIN32
 #include <unistd.h>
+#endif
 #define __STDC_FORMAT_MACROS 1
 #include <inttypes.h>
 

@@ -22,7 +22,9 @@
 #include <stdbool.h>
 #include <errno.h>
 #include <string.h>
+#ifndef _WIN32
 #include <unistd.h>
+#endif
 #define __STDC_FORMAT_MACROS 1
 #include <inttypes.h>
 
