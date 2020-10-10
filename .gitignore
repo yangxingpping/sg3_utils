@@ -2,6 +2,7 @@
 # :3,$!LC_ALL=C sort -fu
 
 /build/
+/build_win/
 
 *.exe
 *.la
