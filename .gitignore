@@ -1,6 +1,8 @@
 # Please keep the entries in this file sorted with the following vi command:
 # :3,$!LC_ALL=C sort -fu
 
+/build/
+
 *.exe
 *.la
 *.lo
