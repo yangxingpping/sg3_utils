@@ -1140,3 +1140,9 @@ do_scsi_pt(struct sg_pt_base * vp, int fd, int time_secs, int verbose)
     pr2ws("%s: Should never reach this point\n", __func__);
     return 0;
 }
+
+int get_stdin_fileno()
+{
+    return STDIN_FILENO;
+}
+

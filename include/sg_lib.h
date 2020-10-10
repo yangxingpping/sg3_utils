@@ -698,6 +698,8 @@ int sg_set_text_mode(int fd);
  * failure. */
 int sg_set_binary_mode(int fd);
 
+int get_stdin_fileno();
+
 #ifdef __cplusplus
 }
 #endif

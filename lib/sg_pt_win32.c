@@ -965,13 +965,13 @@ set_pt_metadata_xfer(struct sg_pt_base * vp, uint8_t * mdxferp,
 }
 
 void
-set_scsi_pt_packet_id(struct sg_pt_base * vp __attribute__ ((unused)),
-                      int pack_id __attribute__ ((unused)))
+set_scsi_pt_packet_id(struct sg_pt_base * vp ,
+                      int pack_id )
 {
 }
 
 void
-set_scsi_pt_tag(struct sg_pt_base * vp, uint64_t tag __attribute__ ((unused)))
+set_scsi_pt_tag(struct sg_pt_base * vp, uint64_t tag )
 {
     struct sg_pt_win32_scsi * psp = vp->implp;
 
@@ -980,7 +980,7 @@ set_scsi_pt_tag(struct sg_pt_base * vp, uint64_t tag __attribute__ ((unused)))
 
 void
 set_scsi_pt_task_management(struct sg_pt_base * vp,
-                            int tmf_code __attribute__ ((unused)))
+                            int tmf_code )
 {
     struct sg_pt_win32_scsi * psp = vp->implp;
 
@@ -989,8 +989,8 @@ set_scsi_pt_task_management(struct sg_pt_base * vp,
 
 void
 set_scsi_pt_task_attr(struct sg_pt_base * vp,
-                      int attrib __attribute__ ((unused)),
-                      int priority __attribute__ ((unused)))
+                      int attrib ,
+                      int priority )
 {
     struct sg_pt_win32_scsi * psp = vp->implp;
 
@@ -1353,7 +1353,7 @@ get_scsi_pt_sense_buf(const struct sg_pt_base * vp)
 
 
 int
-get_scsi_pt_duration_ms(const struct sg_pt_base * vp __attribute__ ((unused)))
+get_scsi_pt_duration_ms(const struct sg_pt_base * vp )
 {
     // const struct sg_pt_win32_scsi * psp = vp->implp;
 
@@ -1363,7 +1363,7 @@ get_scsi_pt_duration_ms(const struct sg_pt_base * vp __attribute__ ((unused)))
 /* If not available return 0 otherwise return number of nanoseconds that the
  * lower layers (and hardware) took to execute the command just completed. */
 uint64_t
-get_pt_duration_ns(const struct sg_pt_base * vp __attribute__ ((unused)))
+get_pt_duration_ns(const struct sg_pt_base * vp )
 {
     return 0;
 }
@@ -3096,6 +3096,11 @@ nvme_pt(struct sg_pt_win32_scsi * psp, struct sg_pt_handle * shp,
     if (psp) { ; }              /* suppress warning */
     if (shp) { ; }              /* suppress warning */
     return -ENOTTY;             /* inappropriate ioctl error */
+}
+
+int get_stdin_fileno()
+{
+    return _fileno(stdin);
 }
 
 #endif          /* (HAVE_NVME && (! IGNORE_NVME)) */

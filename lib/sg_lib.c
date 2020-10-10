@@ -3438,7 +3438,7 @@ sg_f2hex_arr(const char * fname, bool as_binary, bool no_space,
     has_stdin = ((1 == fn_len) && ('-' == fname[0]));   /* read from stdin */
     if (as_binary) {
         if (has_stdin)
-            fd = STDIN_FILENO;
+            fd = get_stdin_fileno();
         else {
             fd = open(fname, O_RDONLY);
             if (fd < 0) {
