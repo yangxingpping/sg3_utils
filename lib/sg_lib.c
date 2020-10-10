@@ -3460,7 +3460,7 @@ sg_f2hex_arr(const char * fname, bool as_binary, bool no_space,
             }
             goto bin_fini;
         }
-        if ((0 == fstat(fd, &a_stat)) && S_ISFIFO(a_stat.st_mode)) {
+        if ((0 == fstat(fd, &a_stat)) && is_fifo(a_stat.st_mode)) {
             /* pipe; keep reading till error or 0 read */
             while (k < max_arr_len) {
                 m = read(fd, mp_arr + k, max_arr_len - k);

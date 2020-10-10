@@ -1146,3 +1146,8 @@ int get_stdin_fileno()
     return STDIN_FILENO;
 }
 
+bool is_fifo(unsigned short mode)
+{
+    return S_ISFIFO(mode);
+}
+

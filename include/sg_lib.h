@@ -700,6 +700,8 @@ int sg_set_binary_mode(int fd);
 
 int get_stdin_fileno();
 
+bool is_fifo(unsigned short mode);
+
 #ifdef __cplusplus
 }
 #endif

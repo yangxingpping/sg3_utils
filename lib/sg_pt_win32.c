@@ -17,6 +17,7 @@
 #include <errno.h>
 #include <ctype.h>
 #include <fcntl.h>
+#include <sys/stat.h>
 #define __STDC_FORMAT_MACROS 1
 #include <inttypes.h>
 
@@ -3101,6 +3102,11 @@ nvme_pt(struct sg_pt_win32_scsi * psp, struct sg_pt_handle * shp,
 int get_stdin_fileno()
 {
     return _fileno(stdin);
+}
+
+bool is_fifo(unsigned short mode)
+{
+    return _S_IFIFO &mode;
 }
 
 #endif          /* (HAVE_NVME && (! IGNORE_NVME)) */
